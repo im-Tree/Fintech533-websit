@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Xiaoya Dong, Yingxue Wang, Yueqi He">
+<meta name="dcterms.date" content="2025-04-09">
 
-<title>alphasignal533</title>
+<title>AlphaSignal533 – alphasignal533</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,22 +109,40 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#longshort-trend-strategy" id="toc-longshort-trend-strategy" class="nav-link active" data-scroll-target="#longshort-trend-strategy">Long–Short Trend Strategy</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">alphasignal533</h1>
+<h1 class="title">AlphaSignal533</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Xiaoya Dong, Yingxue Wang, Yueqi He </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 9, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -132,9 +152,121 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to alphasignal533.com :)</p>
+<section id="longshort-trend-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="longshort-trend-strategy">Long–Short Trend Strategy</h3>
+<section id="portfolio-universe" class="level4">
+<h4 class="anchored" data-anchor-id="portfolio-universe">1. Portfolio Universe</h4>
+<p>We selected these 10 stocks for their strong <strong>sector representation</strong>, <strong>high liquidity</strong>, and <strong>market relevance</strong>. Each stock comes from a different major industry, ensuring diversification and reducing sector-specific risk. As large-cap, actively traded companies, they offer reliable data and efficient execution,.</p>
+<ul>
+<li><strong>AAPL</strong> – Information Electronics</li>
+<li><strong>MSFT</strong> – Information Technology</li>
+<li><strong>JPM</strong> – Financial</li>
+<li><strong>XOM</strong> – Energy</li>
+<li><strong>JNJ</strong> – Healthcare</li>
+<li><strong>PG</strong> – Consumer Staples</li>
+<li><strong>NVDA</strong> – Semiconductors</li>
+<li><strong>CAT</strong> – Industrial</li>
+<li><strong>HD</strong> – Retail</li>
+<li><strong>AMZN</strong> – Communication Services</li>
+</ul>
+</section>
+<section id="rebalancing-frequency" class="level4">
+<h4 class="anchored" data-anchor-id="rebalancing-frequency">2. Rebalancing Frequency</h4>
+<p>The portfolio is rebalanced monthly. At each rebalancing period, the latest technical data is used to recalculate indicator scores and update the portfolio positions.</p>
+</section>
+<section id="technical-indicator-scoring-system" class="level4">
+<h4 class="anchored" data-anchor-id="technical-indicator-scoring-system">3. Technical Indicator Scoring System</h4>
+<p>Each stock is scored (0–5 per indicator) for both long and short setups based on:</p>
+<section id="ema-deviation-delta-calculation" class="level5">
+<h5 class="anchored" data-anchor-id="ema-deviation-delta-calculation">3.1 EMA Deviation (Delta) Calculation</h5>
+<p>The <strong>EMA deviation</strong> measures how far the current price is from its 20-day Exponential Moving Average (EMA). It is calculated as:</p>
+<p>Δ = 100% * (Close - EMA_20) / EMA_20</p>
+<ul>
+<li><strong>Long Scores (price above EMA):</strong>
+<ul>
+<li>Δ &gt; +5%: <strong>5 points</strong></li>
+<li>Δ between +3% and +5%: <strong>4 points</strong></li>
+<li>Δ between +1% and +3%: <strong>3 points</strong></li>
+<li>Δ between 0% and +1%: <strong>2 points</strong></li>
+<li>Otherwise: <strong>0 points</strong></li>
+</ul></li>
+<li><strong>Short Scores (price below EMA):</strong>
+<ul>
+<li>Δ &lt; –5%: <strong>5 points</strong></li>
+<li>Δ between –5% and –3%: <strong>4 points</strong></li>
+<li>Δ between –3% and –1%: <strong>3 points</strong></li>
+<li>Δ between –1% and 0%: <strong>2 points</strong></li>
+<li>Otherwise: <strong>0 points</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="macd-moving-average-convergence-divergence" class="level5">
+<h5 class="anchored" data-anchor-id="macd-moving-average-convergence-divergence">3.2 MACD (Moving Average Convergence Divergence)</h5>
+<ul>
+<li><strong>Calculation:</strong> MACD difference = (MACD line – Signal line)</li>
+<li><strong>Long Scores:</strong>
+<ul>
+<li>MACD_diff ≥ +1.5: <strong>5 points</strong></li>
+<li>MACD_diff in [1.0, 1.5): <strong>4 points</strong></li>
+<li>MACD_diff in [0.5, 1.0): <strong>3 points</strong></li>
+<li>MACD_diff in [0.1, 0.5): <strong>2 points</strong></li>
+<li>Otherwise: <strong>0 points</strong></li>
+</ul></li>
+<li><strong>Short Scores:</strong>
+<ul>
+<li>MACD_diff ≤ –1.5: <strong>5 points</strong></li>
+<li>MACD_diff in (–1.5, –1.0]: <strong>4 points</strong></li>
+<li>MACD_diff in (–1.0, –0.5]: <strong>3 points</strong></li>
+<li>MACD_diff in (–0.5, –0.1]: <strong>2 points</strong></li>
+<li>Otherwise: <strong>0 points</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="adx-average-directional-index" class="level5">
+<h5 class="anchored" data-anchor-id="adx-average-directional-index">3.3 ADX (Average Directional Index)</h5>
+<ul>
+<li><strong>Common for both directions:</strong>
+<ul>
+<li>ADX ≥ 40: <strong>5 points</strong></li>
+<li>ADX between 30 and 40: <strong>4 points</strong></li>
+<li>ADX between 25 and 30: <strong>3 points</strong></li>
+<li>ADX between 20 and 25: <strong>2 points</strong></li>
+<li>ADX &lt; 20: <strong>0 points</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="atr-average-true-range" class="level5">
+<h5 class="anchored" data-anchor-id="atr-average-true-range">3.4 ATR (Average True Range)</h5>
+<ul>
+<li><strong>Calculation:</strong> Use the ratio of the current ATR to the 20-day ATR average.</li>
+<li><strong>Common for both directions:</strong>
+<ul>
+<li>ATR Ratio between 0.8 and 1.2: <strong>5 points</strong></li>
+<li>ATR Ratio between 0.6–0.8 or 1.2–1.5: <strong>4 points</strong></li>
+<li>ATR Ratio between 0.4–0.6 or 1.5–1.8: <strong>3 points</strong></li>
+<li>ATR Ratio between 0.2–0.4 or 1.8–2.0: <strong>2 points</strong></li>
+<li>ATR Ratio &lt; 0.2 or &gt; 2.0: <strong>0 points</strong></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="determining-trade-direction-weight-allocation" class="level4">
+<h4 class="anchored" data-anchor-id="determining-trade-direction-weight-allocation">4. Determining Trade Direction &amp; Weight Allocation</h4>
+<p>For each stock:<br> <br> <strong>Total_Long</strong> = EMA_long + MACD_long + ADX_score + ATR_score<br> <strong>Total_Short</strong> = EMA_short + MACD_short + ADX_score + ATR_score<br></p>
+<p>The direction is chosen by comparing the two totals. The absolute total score is then normalized among stocks in that category (long or short) to determine the weight. Long positions have positive weights while short positions have negative weights.</p>
+</section>
+<section id="risk-management-rules" class="level4">
+<h4 class="anchored" data-anchor-id="risk-management-rules">5. Risk Management Rules</h4>
+<ul>
+<li>Individual stock weight is capped at <strong>20% (absolute value)</strong>.<br></li>
+<li>Overall short exposure is limited to <strong>40%</strong> of the portfolio.<br></li>
+<li><strong>Stop-Loss:</strong> Exit a position if it falls more than 10% from the entry price.<br></li>
+<li><strong>Take-Profit:</strong> Close a position if it gains more than 20% from the entry price.<br></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
